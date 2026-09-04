@@ -1,30 +1,14 @@
-# 🚀 Multi-Tenant Edge API Gateway & Traffic Shaper
+# Edge API Gateway
 
-A high-performance reverse proxy and traffic shaping engine built with Node.js, TypeScript, Express, WebSockets, and MongoDB.
+Enterprise Multi-Tenant Routing & Security Control Hub built with Next.js App Router and Node.js/Express. Designed for high-performance edge processing, tenant authentication, and real-time proxy traffic inspection.
 
-## 🌟 Features
-- **Dynamic Reverse Proxy:** Routes incoming requests to downstream microservices based on tenant API keys.
-- **In-Memory Token Bucket Rate Limiter:** Protects upstream APIs with sub-millisecond evaluation.
-- **Real-Time Telemetry:** Stream latency ($p_{50}$, $p_{99}$) and request statuses live over WebSockets.
-- **Multi-Tenant Administration:** Register tenants and configure quotas on the fly.
+## Architecture
+- **Frontend**: Next.js 14+, Tailwind CSS, custom UI elements, deployed on Vercel.
+- **Backend**: Node.js, Express, CORS, dynamic routing middleware, deployed on Render.
+- **Security**: Header-based API key validation, multi-tenant workspace isolation, live telemetry monitoring.
 
-## 🛠️ Tech Stack
-- **Backend:** Node.js, TypeScript, Express, `http-proxy-middleware`, `ws`
-- **Database:** MongoDB, Mongoose
-- **Tooling:** Docker, `ts-node-dev`
-
-## 🚀 Quick Start Instructions
-
-1. **Extract the ZIP file** and open the folder in **VS Code**.
-2. **Start MongoDB** locally or obtain a MongoDB Atlas Connection String.
-3. **Configure Environment Variables:**
-   - In `server/`, copy `.env.example` to `.env` and set your `MONGODB_URI`.
-4. **Install & Run Server:**
-   ```bash
-   cd server
-   npm install
-   npm run dev
-   ```
-5. **Test Gateway:**
-   - Create a Tenant: `POST http://localhost:5000/api/tenants`
-   - Send requests through the gateway: `GET http://localhost:5000/gateway/<YOUR_API_KEY>/`
+## Features
+- Dynamic Tenant Routing & Presets
+- Real-time Node Health & Uptime Tracking
+- Live Payload Inspection & HTTP Status Codes
+- Analytics & Metrics Telemetry Endpoint
