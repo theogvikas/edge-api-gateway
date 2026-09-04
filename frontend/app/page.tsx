@@ -11,7 +11,7 @@ export default function Home() {
   const [responseStatus, setResponseStatus] = useState<number | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://edge-api-gateway.onrender.com';
 
   useEffect(() => {
     checkHealth();
@@ -54,14 +54,10 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#07090E] text-slate-100 p-6 md:p-14 font-sans relative overflow-hidden selection:bg-amber-400 selection:text-slate-950">
-      
-      {/* Cinematic Ambient Background Glows */}
       <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[150px] pointer-events-none"></div>
 
       <div className="max-w-5xl mx-auto space-y-10 relative z-10">
-        
-        {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-white/10 pb-6 gap-4 backdrop-blur-md">
           <div className="space-y-1">
             <div className="flex items-center gap-3">
@@ -76,7 +72,6 @@ export default function Home() {
             <p className="text-slate-400 text-sm font-medium tracking-wide">Enterprise Multi-Tenant Routing & Security Control Hub</p>
           </div>
 
-          {/* Status Pill */}
           <div className="flex items-center gap-3 bg-white/[0.03] border border-white/10 backdrop-blur-xl px-4 py-2.5 rounded-2xl text-xs shadow-2xl">
             <span className="text-slate-400 font-medium">Node Status:</span>
             <span className={`font-mono font-bold px-2.5 py-1 rounded-lg transition-all duration-300 ${healthData?.status === 'OK' ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.2)]' : 'bg-rose-500/15 text-rose-400 border border-rose-500/30 shadow-[0_0_10px_rgba(244,63,94,0.2)]'}`}>
@@ -88,10 +83,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Main Interactive Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          
-          {/* Left Control Panel */}
           <div className="lg:col-span-6 bg-white/[0.02] backdrop-blur-2xl border border-white/10 rounded-3xl p-7 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] space-y-6 transition-all hover:border-amber-500/30">
             <div className="flex items-center justify-between border-b border-white/5 pb-4">
               <h2 className="text-base font-bold text-white flex items-center gap-2.5 tracking-wide">
@@ -103,7 +95,6 @@ export default function Home() {
               <span className="text-[10px] font-mono tracking-widest text-amber-400 uppercase bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/20">Live Payload</span>
             </div>
 
-            {/* Quick Presets */}
             <div>
               <label className="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wider">Quick Tenant Presets:</label>
               <div className="flex flex-wrap gap-2">
@@ -187,7 +178,6 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Right Response Inspector Panel */}
           <div className="lg:col-span-6 bg-white/[0.02] backdrop-blur-2xl border border-white/10 rounded-3xl p-7 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] flex flex-col transition-all hover:border-emerald-500/30">
             <div className="flex justify-between items-center mb-5 border-b border-white/5 pb-4">
               <h2 className="text-base font-bold text-white flex items-center gap-2.5 tracking-wide">
@@ -219,7 +209,6 @@ export default function Home() {
               )}
             </div>
 
-            {/* Footer Info */}
             <div className="mt-5 pt-4 border-t border-white/5 text-xs text-slate-500 flex justify-between font-mono">
               <span>Edge Node: <strong className="text-slate-300">Global Cluster (US-East)</strong></span>
               <span>Latency: <strong className="text-emerald-400">12ms</strong></span>
