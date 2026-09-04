@@ -11,13 +11,13 @@ export default function Home() {
   const [responseStatus, setResponseStatus] = useState<number | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://edge-api-gateway.onrender.com';
+  const API_URL = 'https://edge-api-gateway.onrender.com';
 
   useEffect(() => {
     checkHealth();
     const interval = setInterval(checkHealth, 8000);
     return () => clearInterval(interval);
-  }, [API_URL]);
+  }, []);
 
   const checkHealth = () => {
     fetch(`${API_URL}/health`)
